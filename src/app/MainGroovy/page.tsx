@@ -1,7 +1,10 @@
 //page.tsx
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import ChartCard from "../../components/charts/chartcard";
+
+
+
+
 import { faker } from "@faker-js/faker";
 import AppWidgetSummary from "@/components/layouts/appWidgetSummary";
 import AppWebsiteVisits from "@/components/layouts/appWebsiteVisits";
@@ -11,9 +14,6 @@ import AppCurrentSubject from "@/components/layouts/appCurrentSubject";
 import AppNewsUpdate from "@/components/layouts/appNewsUpdate";
 import Head from 'next/head';
 import Box from "@mui/material/Box";
-import {redirect} from "next/navigation";
-import {useSession} from 'next-auth/react';
-import pool from "../../utils/mysql";
 import { connectDatabase } from "./db";
 
 const MainGroovy: React.FC = () => {
@@ -41,7 +41,7 @@ const MainGroovy: React.FC = () => {
     <Typography variant="h4" sx={{ mb: 5 }}>
       <Box
           component="img"
-          src="/assets/background/terratiarriba.png"
+          src="./assets/background/terratiarriba.png"
           
           sx={{
             px: 0, // Adjust the padding to make it thinner
@@ -68,7 +68,7 @@ const MainGroovy: React.FC = () => {
             title="M2 con estrés hídrico alto"
             total={7}
             color="success"
-            icon={<img alt="icon" src="/assets/icons/glass/ic_glass_bag.png" />}
+            icon={<img alt="icon" src="./assets/icons/glass/ic_glass_bag.png" />}
           />
         </Grid>
 
@@ -78,7 +78,7 @@ const MainGroovy: React.FC = () => {
             total={1320}
             color="info"
             icon={
-              <img alt="icon" src="/assets/icons/glass/ic_glass_users.png" />
+              <img alt="icon" src="./assets/icons/glass/ic_glass_users.png" />
             }
           />
         </Grid>
@@ -88,7 +88,7 @@ const MainGroovy: React.FC = () => {
             title="M2 Healthy"
             total={250}
             color="warning"
-            icon={<img alt="icon" src="/assets/icons/glass/ic_glass_buy.png" />}
+            icon={<img alt="icon" src="./assets/icons/glass/ic_glass_buy.png" />}
           />
         </Grid>
 
@@ -98,7 +98,7 @@ const MainGroovy: React.FC = () => {
             total={10}
             color="error"
             icon={
-              <img alt="icon" src="/assets/icons/glass/ic_glass_message.png" />
+              <img alt="icon" src="./assets/icons/glass/ic_glass_message.png" />
             }
           />
         </Grid>
@@ -113,7 +113,7 @@ const MainGroovy: React.FC = () => {
               id: faker.string.uuid(),
               title: faker.person.jobTitle(),
               description: faker.commerce.productDescription(),
-              image: `/assets/images/covers/cover_${index + 1}.jpg`,
+              image: `./assets/images/covers/cover_${index + 1}.jpg`,
               postedAt: faker.date.recent(),
             }))}
           />
